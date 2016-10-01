@@ -42,6 +42,9 @@ target_link_libraries(tf_change_notifier ${PROJECT_NAME})
 add_executable(tf_monitor src/tf_monitor.cpp)
 target_link_libraries(tf_monitor ${PROJECT_NAME})
 
+add_executable(tf_velocity_publisher src/tf_velocity_publisher.cpp)
+target_link_libraries(tf_velocity_publisher ${PROJECT_NAME})
+
 add_executable(static_transform_publisher src/static_transform_publisher.cpp)
 target_link_libraries(static_transform_publisher ${PROJECT_NAME})
 
@@ -144,7 +147,7 @@ endif()
 install(DIRECTORY include/${PROJECT_NAME}/
   DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION})
 
-install(TARGETS ${PROJECT_NAME} tf_echo tf_empty_listener tf_change_notifier tf_monitor static_transform_publisher
+install(TARGETS ${PROJECT_NAME} tf_echo tf_empty_listener tf_change_notifier tf_monitor tf_velocity_publisher static_transform_publisher
   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
